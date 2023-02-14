@@ -73,7 +73,7 @@ BEGIN
 		SET @cmd_cr_indx = 'IF NOT EXISTS (SELECT name FROM sys.indexes 
 								WHERE name = ''' + @idx_name + ''' AND object_id = object_id(''dbo.' + @tablename + '''))
 							BEGIN
-								CREATE NONCLUSTERED INDEX [' + @idx_name + '] ON [dbo].[' + @tablename + '] ([' + @col + ']) INCLUDE ([' + @col + '])
+								CREATE NONCLUSTERED INDEX [' + @idx_name + '] ON [dbo].[' + @tablename + '] ([' + @col + '])
 								PRINT  ''Index ' + @idx_name + ' has been created ''
 							END
 							ELSE 
